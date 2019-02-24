@@ -32,7 +32,7 @@ public class RETURN_DATE1 extends javax.swing.JInternalFrame {
         {
         
         Class.forName("com.mysql.jdbc.Driver");   
-        Connection con=DriverManager.getConnection("jdbc:mysql:///library","root",""); 
+        Connection con=DriverManager.getConnection("jdbc:mysql:///library","root","roh##46705R"); 
         PreparedStatement smt=con.prepareStatement("select distinct concat(student_info.Name,':',issue_book1.identity_no) as sid \n" +
 "from issue_book1 inner join book on issue_book1.book_id=book.book_id \n" +
 "inner join student_info on student_info.identity_no=issue_book1.identity_no ");   
@@ -131,7 +131,7 @@ public class RETURN_DATE1 extends javax.swing.JInternalFrame {
      String bid[]=b.split(":");
      String bidvalue=bid[1];
      Class.forName("com.mysql.jdbc.Driver");   
-     Connection con=DriverManager.getConnection("jdbc:mysql:///library","root","");
+     Connection con=DriverManager.getConnection("jdbc:mysql:///library","root","roh##46705R");
      PreparedStatement smt=con.prepareStatement("update issue_book1 set date_return=? where book_id=?");
      PreparedStatement smt1=con.prepareStatement("update book set FLAG =null where book_id=?");
      //smt.setDate(1, new (java.sql.Date) t0.getDate());
@@ -163,7 +163,7 @@ System.out.println(e);
         String sidvalue=bid[1];
      //   long diffInMillies = t0.getTime();
         Class.forName("com.mysql.jdbc.Driver");   
-        Connection con=DriverManager.getConnection("jdbc:mysql:///library","root","");
+        Connection con=DriverManager.getConnection("jdbc:mysql:///library","root","roh##46705R");
         PreparedStatement smt1=con.prepareStatement("select  concat(book.book_name,':',issue_book1.book_id) as bid \n" +
         "from issue_book1 inner join book on issue_book1.book_id=book.book_id where date_return is  null and issue_book1.identity_no='"+sidvalue +"'"); 
          ResultSet rs1=smt1.executeQuery();

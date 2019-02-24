@@ -25,7 +25,7 @@ public class RptSummary extends javax.swing.JInternalFrame {
                try{
             DefaultTableModel d1=(DefaultTableModel)jTable2.getModel();
             Class.forName("com.mysql.jdbc.Driver");
-            Connection con=DriverManager.getConnection("jdbc:mysql:///library","root","");
+            Connection con=DriverManager.getConnection("jdbc:mysql:///library","root","roh##46705R");
             PreparedStatement smt=con.prepareStatement("select upper(book_category) as ca, count(*) as no from book group by book_category");
             ResultSet rs=smt.executeQuery();
             while(rs.next())

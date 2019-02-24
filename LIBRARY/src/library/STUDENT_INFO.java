@@ -231,7 +231,7 @@ public class STUDENT_INFO extends javax.swing.JInternalFrame {
        String h=t7.getText();
        
        Class.forName("com.mysql.jdbc.Driver");   
-       Connection con=DriverManager.getConnection("jdbc:mysql:///library","root","");
+       Connection con=DriverManager.getConnection("jdbc:mysql:///library","root","roh##46705R");
        PreparedStatement smt=con.prepareStatement("insert into student_info values(?,?,?,?,?,?,?,?,?)");      
        smt.setString(1,a);
        smt.setString(2,b);
@@ -254,6 +254,7 @@ public class STUDENT_INFO extends javax.swing.JInternalFrame {
       } 
       catch(Exception e)
       {
+          e.printStackTrace();
           System.out.println(e);
          
       }

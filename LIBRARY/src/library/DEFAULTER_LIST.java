@@ -24,7 +24,7 @@ public int fine;
         initComponents();
      try{DefaultTableModel d1=(DefaultTableModel)ta.getModel();
             Class.forName("com.mysql.jdbc.Driver");
-            Connection con=DriverManager.getConnection("jdbc:mysql:///library","root","");
+            Connection con=DriverManager.getConnection("jdbc:mysql:///library","root","roh##46705R");
             PreparedStatement smt=con.prepareStatement("select student_info.name,\n" +
 "       issue_book1.book_id, \n" +
 "       book.book_name,\n" +

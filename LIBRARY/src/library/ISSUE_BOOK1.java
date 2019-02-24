@@ -31,7 +31,7 @@ public class ISSUE_BOOK1 extends javax.swing.JInternalFrame {
         try
         {
         Class.forName("com.mysql.jdbc.Driver");   
-        Connection con=DriverManager.getConnection("jdbc:mysql:///library","root",""); 
+        Connection con=DriverManager.getConnection("jdbc:mysql:///library","root","roh##46705R"); 
         PreparedStatement smt=con.prepareStatement("select concat_ws('',book_name,'-',book_id)as book1  from book where FLAG is NULL ");
         ResultSet rs=smt.executeQuery();
         Bookid.addItem("Select Book");
@@ -43,6 +43,7 @@ public class ISSUE_BOOK1 extends javax.swing.JInternalFrame {
         }
          catch(Exception e)
         {  
+            e.printStackTrace();
           System.out.println(e);
         } 
    }
@@ -167,7 +168,7 @@ public class ISSUE_BOOK1 extends javax.swing.JInternalFrame {
        String sid=ssid[0];
       
        Class.forName("com.mysql.jdbc.Driver");   
-       Connection con=DriverManager.getConnection("jdbc:mysql:///library","root","");
+       Connection con=DriverManager.getConnection("jdbc:mysql:///library","root","roh##46705R");
        PreparedStatement smt=con.prepareStatement("insert into issue_book1(book_id,identity_no,issue_date,due_date) values(?,?,?,?)");      
        PreparedStatement smt1=con.prepareStatement("update book set FLAG='I' where book_id=?");
        PreparedStatement smt2=con.prepareStatement("SELECT DATEDIFF(date_return,issue_date) as ndays from issue_book1");
@@ -206,7 +207,7 @@ public class ISSUE_BOOK1 extends javax.swing.JInternalFrame {
     try
         {
         Class.forName("com.mysql.jdbc.Driver");   
-        Connection con=DriverManager.getConnection("jdbc:mysql:///library","root",""); 
+        Connection con=DriverManager.getConnection("jdbc:mysql:///library","root","roh##46705R"); 
         PreparedStatement smt=con.prepareStatement("Select  concat_ws('',student_info.name,':' ,student_info.identity_no)\n" +
 "     as sid, \n" +
 "     count(*) as no ,\n" +

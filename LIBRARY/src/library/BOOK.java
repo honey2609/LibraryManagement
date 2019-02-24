@@ -27,7 +27,7 @@ public int status;
    try
    {
    Class.forName("com.mysql.jdbc.Driver");
-   Connection con=DriverManager.getConnection("jdbc:mysql:///library","root","");
+   Connection con=DriverManager.getConnection("jdbc:mysql:///library","root","roh##46705R");
 
    PreparedStatement smt=con.prepareStatement("select * from book");
  
@@ -48,7 +48,7 @@ public int status;
         try
         {
         Class.forName("com.mysql.jdbc.Driver");   
-        Connection con=DriverManager.getConnection("jdbc:mysql:///library","root",""); 
+        Connection con=DriverManager.getConnection("jdbc:mysql:///library","root","roh##46705R"); 
         PreparedStatement smt=con.prepareStatement("select * from category");
         ResultSet rs=smt.executeQuery();
          while(rs.next())
@@ -66,7 +66,7 @@ public int status;
              try{
             DefaultTableModel d1=(DefaultTableModel)ta.getModel();
             Class.forName("com.mysql.jdbc.Driver");
-            Connection con=DriverManager.getConnection("jdbc:mysql:///library","root","");
+            Connection con=DriverManager.getConnection("jdbc:mysql:///library","root","roh##46705R");
             PreparedStatement smt=con.prepareStatement("select book_id,book_category,book_name,author,publisher,pages,price from book");
             ResultSet rs=smt.executeQuery();
             while(rs.next())
@@ -314,7 +314,7 @@ public int status;
          String h=t8.getText().toUpperCase();
      
          Class.forName("com.mysql.jdbc.Driver");   
-         Connection con=DriverManager.getConnection("jdbc:mysql:///library","root","");
+         Connection con=DriverManager.getConnection("jdbc:mysql:///library","root","roh##46705R");
          if(status==1)
            { PreparedStatement smt1=con.prepareStatement("delete from book where book_id=?");
              smt1.setString(1,a);

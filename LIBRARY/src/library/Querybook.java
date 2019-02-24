@@ -26,7 +26,7 @@ public class Querybook extends javax.swing.JInternalFrame {
         try
         {
         Class.forName("com.mysql.jdbc.Driver");   
-        Connection con=DriverManager.getConnection("jdbc:mysql:///library","root",""); 
+        Connection con=DriverManager.getConnection("jdbc:mysql:///library","root","roh##46705R"); 
         PreparedStatement smt=con.prepareStatement("select concat_ws('',book_name,':',book_id)as book1  from book order by book_name  ");
         ResultSet rs=smt.executeQuery();
         Bookid.addItem("Select Book");
@@ -85,16 +85,18 @@ public class Querybook extends javax.swing.JInternalFrame {
        String  bid = part[1];   
         try{    
        Class.forName("com.mysql.jdbc.Driver");   
-       Connection con=DriverManager.getConnection("jdbc:mysql:///library","root","");
+       Connection con=DriverManager.getConnection("jdbc:mysql:///library","root","roh##46705R");
        PreparedStatement smt=con.prepareStatement("select book_name,flag from book where  book_id='"+ bid +"'");
        ResultSet rs=smt.executeQuery();
        while(rs.next()){
            if (rs.getString("flag")== "I")
            {  
-           JOptionPane.showMessageDialog(this,"BOOK IS  Available","",JOptionPane.INFORMATION_MESSAGE);
+           JOptionPane.showMessageDialog(this,"BOOK IS not Available","",JOptionPane.INFORMATION_MESSAGE);
+           
            } 
-           else{
-            JOptionPane.showMessageDialog(this,"BOOK IS not  Available","",JOptionPane.INFORMATION_MESSAGE);        
+           else
+           {
+            JOptionPane.showMessageDialog(this,"BOOK IS  Available","",JOptionPane.INFORMATION_MESSAGE);        
            }
        }
        

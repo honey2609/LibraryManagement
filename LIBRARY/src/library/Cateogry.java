@@ -81,7 +81,7 @@ public class Cateogry extends javax.swing.JInternalFrame {
         try{
             String a=t1.getText();
             Class.forName("com.mysql.jdbc.Driver");   
-            Connection con=DriverManager.getConnection("jdbc:mysql:///library","root",""); 
+            Connection con=DriverManager.getConnection("jdbc:mysql:///library","root","roh##46705R"); 
             PreparedStatement smt=con.prepareStatement("insert into category values(?)");
             smt.setString(1,a);
             smt.executeUpdate();
